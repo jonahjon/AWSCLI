@@ -1,0 +1,2 @@
+#SUBNET IP ADD INTO TABLE:
+aws ec2 describe-subnets --query 'Subnets[*].{Subnet:SubnetId, IP:CidrBlock, VPC:VpcId}' --output table >> subnets1.txt && sort subnets1.txt >> subnetssorted.txt && cat subnetssorted.txt
